@@ -41,6 +41,10 @@ while contador < 10:
 
 
 '''
+texto = "xtexto"
 
+texto = texto[2].replace("x","m")
+
+print(texto)
 
 
