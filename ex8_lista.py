@@ -34,13 +34,13 @@ while True:
         print("Até uma proxima vez!!!")
         break
 
-    if(option == list_options[0]):
+    elif(option == list_options[0]):
         os.system('clear')
         lista_compras.append(str(input("Informe o nome do produto\n=> ")))
         print(f"Produto {lista_compras.index(lista_compras[-1])} - {lista_compras[-1]} inserido com sucesso.")
         continue
 
-    if(option == list_options[1]):
+    elif(option == list_options[1]):
         os.system('clear')
 
         if(len(lista_compras) < 1 ):
@@ -87,7 +87,7 @@ while True:
             continue
         
     
-    if(option == list_options[2]):
+    elif(option == list_options[2]):
 
         if(len(lista_compras) < 1):
             os.system('clear')

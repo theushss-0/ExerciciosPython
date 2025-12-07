@@ -46,7 +46,7 @@ while contador < 10:
 #texto = texto[2].replace("x","m")
 
 #print(texto)
-
+'''
 lista_a = ['texto', 'texto2']
 lista_b = lista_a.copy()
 
@@ -117,3 +117,39 @@ try:
     print(next(nova_lista_enumerada2)) ## erro devido não existir um proximo valor no iterator
 except:
     print()
+
+
+    
+# COMO RESOLVER A IMPRECISÃO DE TIPOS FLUTUANTE
+import decimal # biblioteca que faz a correção
+
+num_float1 = decimal.Decimal('0.1')# Utilizando uma classe da biblioteca decimal
+num_float2 = decimal.Decimal('0.7')
+num_impreciso = num_float1 + num_float2 
+print(f"{num_impreciso:.2f}") # uma das forma é forçando que ele ajuste as casas decimais fazendo assim o arredonamento
+print(round(num_impreciso,3)) # outra forma é utilizando a função round, que faz o mesmo que o caso acima, porém o retorno é o numero flutuante
+print(num_impreciso) # soma dos dois valores após usar a classe Decimal da biblioteca
+
+'''
+
+
+string = 'ABC'
+lista = ["Maçã", "Banana", "Pêra"]
+tupla = 'Matheus', 'Henrique','dos','Santos', 'Silva'
+lista_de_lista = [['Henrique','Santos'], 'silva',['josé', ['josé']]]
+a,b,*_,c = tupla
+
+print(*tupla, sep="\n")
+print()
+print(*lista, sep="--")
+print(*string)
+print()
+print(*lista_de_lista, sep='\n')
+
+print("jorge", lista, sep=string, end=' ')
+
+print()
+print()
+
+print(a,b,c, sep='-')
+print(*_,sep='\n')
