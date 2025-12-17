@@ -131,7 +131,7 @@ print(round(num_impreciso,3)) # outra forma é utilizando a função round, que 
 print(num_impreciso) # soma dos dois valores após usar a classe Decimal da biblioteca
 
 '''
-
+"""
 
 string = 'ABC'
 lista = ["Maçã", "Banana", "Pêra"]
@@ -153,3 +153,65 @@ print()
 
 print(a,b,c, sep='-')
 print(*_,sep='\n')
+
+
+
+pessoas = {
+    "nome": "Jorge",
+    "idade": 30
+}
+
+dados_novos = {
+    "sobrenome": "Oliveira",
+    "nascimento": 1898,
+}
+
+dd_pessoa01 = pessoas
+print(dd_pessoa01)
+
+nome, idade = pessoas.values()
+print(nome, idade)
+
+pessoa_nome, pessoa_idade = pessoas.items()
+print(pessoa_nome, pessoa_idade)
+
+
+(ch_nome, nome),(ch_idade, idade) = pessoas.items()
+print(ch_nome,nome,'\n', ch_idade, idade)
+
+infos_pessoa = {**pessoas, "comidas-favorita": 'lasanha', **dados_novos}
+infos_pessoa.update({'time':"Flamento", 'cpf': 123456789})
+print("Dados da pessoa: ", infos_pessoa)
+
+lista = [numero * 2 for numero in range(10)]
+lista_range = list(range(10))
+lista_for = []
+for numero in range(10):
+    lista_for.append(numero*3)
+
+print(lista)
+
+print(lista_range)
+
+print(lista_for)
+"""
+
+from decimal import Decimal
+
+tab_precos = [
+    {"nome": "p1", "preco": 10},
+    {"nome": "p2", "preco": 20},
+    {"nome": "p3", "preco": 30},
+]
+
+print(tab_precos)
+
+
+tab_precos_atualizados = [
+    {**produto,"preco": produto['preco']*1.05 }
+    if produto["preco"] > 20 else {**produto} 
+    for produto in tab_precos
+    if produto['nome'] == 'p3'
+]
+
+print(*tab_precos_atualizados, sep='\n')
