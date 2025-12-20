@@ -320,7 +320,6 @@ for v in _gen3:
     print(v)
 print()
 
-'''
 
 
 try:
@@ -341,3 +340,5 @@ else:
     print("Não houveram erros")
 finally:
     print("Finalisando try")
+
+'''
