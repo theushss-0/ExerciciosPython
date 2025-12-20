@@ -194,7 +194,6 @@ print(lista)
 print(lista_range)
 
 print(lista_for)
-"""
 
 from decimal import Decimal
 
@@ -215,3 +214,130 @@ tab_precos_atualizados = [
 ]
 
 print(*tab_precos_atualizados, sep='\n')
+
+lista = [1,2,3 ,"Texto", {1,2,3}, ("Texto", "novo Texto"), 2.4,5.6, (3.4, 5.5)]
+
+
+for item in lista:
+
+    if isinstance(item, set):
+        item.add(4)
+        print(item)
+        print()
+    
+    if isinstance(item, str):
+        print(item.upper())
+        print()
+
+    if isinstance(item, (int, float)):
+        print(item * 5)
+        print()
+import sys
+## iterator
+lista_iteravel= [1,2,3,4,5]
+lista_iter = iter(lista_iteravel)
+print(lista_iter.__next__())
+print(lista_iter.__next__())
+print(lista_iter.__next__())
+
+## generator
+
+list_valores = [n for n in range(10000)]
+
+print("bites do tamanho da lista: ",sys.getsizeof(list_valores))
+
+list_generator = (n for n in range(10000))
+print("bites do primeiro valor do generetor: ",sys.getsizeof(list_generator))
+
+print(list_generator.__next__())
+print(list_generator.__next__())
+print(list_generator.__next__())
+print(list_generator.__next__())
+"""
+
+
+## Função Generator
+
+def fnc_generator(n=0,maximun=10):
+    while True:
+        yield n
+
+        n+=1
+        if( n >= maximun):
+            return "ACABOU"
+
+
+##gen = fnc_generator(maximun=5)
+
+'''
+for value in gen:
+    print(value)
+
+gen = fnc_generator(maximun=5)
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+def gen1():
+    print("GEN1")
+    yield 1
+    yield 2
+    yield 3
+    print("Fim GEN1")
+
+def gen2(gen=None):
+    print("GEN2")
+    if gen is not None:
+        yield from gen
+    yield 4
+    yield 5
+    yield 6
+    print("Fim GEN2")
+
+def gen3(gen):
+    print("GEN3")
+    yield from gen()
+    yield 10
+    yield 20
+    yield 30
+    print("Fim GEN3")
+
+_gen1 = gen2(gen1())
+_gen2 = gen2()
+_gen3 = gen3(gen1)
+
+
+for v in _gen1:
+    print(v)
+print()
+for v in _gen2:
+    print(v)
+print()
+for v in _gen3:
+    print(v)
+print()
+
+'''
+
+
+try:
+    a = 12
+    b = 2
+
+    print("Linha 1 ")
+    x = a/b
+    print("Linha 2 ")
+except ZeroDivisionError as e:
+    print(e.__class__.__name__)
+    print(e)
+
+except (IndexError, TypeError) as e:
+    print(e.__class__.__name__)
+    print(e)
+else:
+    print("Não houveram erros")
+finally:
+    print("Finalisando try")
