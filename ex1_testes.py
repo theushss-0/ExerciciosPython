@@ -342,3 +342,106 @@ finally:
     print("Finalisando try")
 
 '''
+
+'''
+
+def concatenar(valor):
+    valor_retorno = valor
+    def a_concatenar(novo_valor):
+        nonlocal valor_retorno
+        valor_retorno += novo_valor
+        return valor_retorno
+    return a_concatenar
+
+
+x = concatenar('a')
+print(x("b"))
+print(x("c"))
+print(x("d"))
+
+#funcao decoradora (cria a função e valida informação passada como parametro)
+def cria_funcao(funcao):
+    def interna(*args, **kwargs):
+        for arg in args:
+            e_string(arg)
+        resultado = funcao(*args, **kwargs)
+        return resultado
+    return interna
+
+#sytaxe sugar - ao chamar a função "inverte_string", a mesma é passada como parâmetro para a função "cria_funcao"
+@cria_funcao 
+def inverte_string(string):
+    return string[::-1]
+
+
+# funcao que valida se o valor passado como parametro é uma string
+def e_string(param):
+    if not isinstance(param, str):
+        raise TypeError("Isso não é uma string!") # raise lança uma exceção (throws except type(info. lancada))
+    
+
+invertida = inverte_string("Luiz") # deixa o código mais limpo
+
+print(invertida)
+print(inverte_string("Matheus"))
+print(inverte_string(123)) #TypeError - o valor precisa ser String
+'''
+'''
+def decoradora(funcao):
+    print("Função decoradora iniciada!")
+
+    def interna(*args, **kwargs):
+        print("aninhada!!")
+        res = funcao(*args, **kwargs)
+        return res
+
+    return interna
+
+
+@decoradora ## nesse momento a funcao decoradora já é iniciada, e fica aguando a execucao da funcao mais interna
+def soma(x, y):
+    return x+y
+
+soma_xy = soma(1,2)
+
+print(soma_xy)
+'''
+## Sobre Decoradores e Syntaxe Sugar
+"""
+def fabrica_decoradores(nome=None):
+    def decorador(funcao):
+        def interna(*args, **kwargs):
+            res = funcao(*args, **kwargs)
+            final = f"{res} {nome}"
+            return final
+        return interna
+    return decorador
+
+
+
+#ordem de baixo para cima
+@fabrica_decoradores("5") # executa por ultimo
+@fabrica_decoradores("4") # ...
+@fabrica_decoradores("3") # ... 
+@fabrica_decoradores("2") # executa segundo
+@fabrica_decoradores("1") # executa primeiro
+@fabrica_decoradores("Maria")
+## sempre a funcao seguinte
+def soma(x,y):
+    return x + y 
+
+def concatena_string(str1, str2):
+    return str1 + str2
+
+
+string_concatenada = concatena_string("Matheus","Henrique")
+nums = soma(1,2)
+
+print(string_concatenada)
+print(nums)
+
+
+"""
+
+
+
