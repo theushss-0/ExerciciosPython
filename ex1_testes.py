@@ -443,6 +443,7 @@ print(nums)
 
 """
 '''
+
 from itertools import count #infinito
 
 c1 = count(step=5, start=1) #infinito
@@ -510,6 +511,16 @@ alunos = [
     {'nome': 'Maria', 'nota': 'B'}
 ]
 
+def print_iter(iterator):
+    print(*list(iterator), sep="\n")
+    print()
+
+produtos = [
+    {'nomme': 'Produto 5', 'preco': 10.00}
+]
+
+'''
+
 
 def ordena(aluno):
     return aluno['nota']
@@ -526,3 +537,5 @@ for ch, grupo in grupos:
     print(ch)
     for vl in grupo:
         print(vl)
+
+'''
