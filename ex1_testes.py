@@ -442,6 +442,16 @@ print(nums)
 
 
 """
+'''
+def print_iter(iterator):
+    print(*list(iterator), sep="\n")
+    print()
+
+produtos = [
+    {'nomme': 'Produto 5', 'preco': 10.00}
+]
+
+'''
 
 
 
