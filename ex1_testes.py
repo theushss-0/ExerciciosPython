@@ -442,6 +442,87 @@ print(nums)
 
 
 """
+'''
+from itertools import count #infinito
+
+c1 = count(step=5, start=1) #infinito
+r1 = range(1,100, 5)
+
+print(type(c1), c1)
+print(type(r1), r1)
+
+print("c1 é um iterator? ", hasattr(c1, '__iter__'))
+print("c1 usa a função next? ", hasattr(c1, '__next__'))
+
+print("r1 é um iterator? ", hasattr(r1, '__iter__'))
+print("r1 usa a função next? ", hasattr(r1, '__next__'))
+
+print('iterando sobre o c1(count): ')
+for v in c1:
+    if v > 99:
+        break
+    print(v, end="\t")
+print()
+print()
+print('iterando sobre o r1(range)')
+
+for v in r1:
+    print(v, end='\t')
+'''
+
+## PERMUTAÇÃO, COMBINAÇÃO e PRODUTO
+
+"""
+from itertools import combinations, permutations, product
+
+def print_iter(iterator):
+    print(*list(iterator), sep='\n')
+    print()
+
+lista_pessoas = [
+    'João', 'Pedro', 'Maria', 'Soraia'
+]
+
+roupas = [
+    ['Branca', 'Preta'],
+    ['p', 'm', 'g'],
+    ['masculino', 'feminica', 'unisex'],
+    ['algodão', 'poliéster']
+]
+
+print_iter(combinations(lista_pessoas,2)) #combinations - pega todos as combinações possíveis sem repetir os valores
+print_iter(permutations(lista_pessoas,2)) #permutação - pega todos as combinações possíveis repetindo valores
+print_iter(product(*roupas))
+
+"""
+from itertools import groupby
+
+alunos = [
+    {'nome': 'Luiz', 'nota': 'A'},
+    {'nome': 'Leticia', 'nota': 'C'},
+    {'nome': 'Fabrício', 'nota': 'A'},
+    {'nome': 'João', 'nota': 'C'},
+    {'nome': 'Regina', 'nota': 'B'},
+    {'nome': 'Eduarda', 'nota': 'A'},
+    {'nome': 'André', 'nota': 'B'},
+    {'nome': 'Anderson', 'nota': 'B'},
+    {'nome': 'Joana', 'nota': 'C'},
+    {'nome': 'Maria', 'nota': 'B'}
+]
 
 
+def ordena(aluno):
+    return aluno['nota']
 
+
+alunos_agrupados = sorted(alunos, key=lambda a: a['nota'])
+
+print(*alunos_agrupados, sep="\n")
+
+grupos = groupby(alunos_agrupados, key=ordena)
+
+print()
+for ch, grupo in grupos:
+    print(ch)
+    for vl in grupo:
+        print(vl)
