@@ -443,7 +443,6 @@ print(nums)
 
 """
 '''
-<<<<<<< HEAD
 
 from itertools import count #infinito
 
@@ -512,8 +511,8 @@ alunos = [
     {'nome': 'Maria', 'nota': 'B'}
 ]
 
-=======
->>>>>>> ef7e1dd2c0913f6dd596e9b35b7a4d7e8ac57ca7
+
+
 def print_iter(iterator):
     print(*list(iterator), sep="\n")
     print()
