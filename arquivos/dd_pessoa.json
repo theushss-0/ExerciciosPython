@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "nomePessoa",
+    "sobrenome": "sobrenomePessoa",
+    "idade": 30,
+    "peso": 80,
+    "altura": 1.9
+  },
+  {
+    "nome": "nomePessoa2",
+    "sobrenome": "sobrenomePessoa2",
+    "idade": 30,
+    "peso": 80,
+    "altura": 1.9
+  },
+  {
+    "nome": "nomePessoa",
+    "sobrenome": "sobrenomePessoa",
+    "idade": 30,
+    "peso": 80,
+    "altura": 1.9
+  },
+  {
+    "nome": "nomePessoa2",
+    "sobrenome": "sobrenomePessoa2",
+    "idade": 30,
+    "peso": 80,
+    "altura": 1.9
+  }
+]
