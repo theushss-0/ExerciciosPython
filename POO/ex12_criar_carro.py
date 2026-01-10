@@ -62,7 +62,7 @@ class Fabricante:
         print(self.nome)
         for carro in self.carros:
             print('Nome: ',carro.nome)
-            print('Motor: ',carro.motor.nome)
+            print('Motor: ',carro.motor.nome) 
 
     def __del__(self):
         print("APAGANDO, ", self.nome)
