@@ -1,6 +1,6 @@
 def calc_imc(pessoa_altura,pessoa_peso):
     imc = pessoa_peso / pessoa_altura**2
-    return imc
+    return round(imc,3)
 
 
 def classifica_imc(imc):
@@ -14,7 +14,7 @@ def classifica_imc(imc):
         return "Obesidade"
     
 
-peso = float(input("Digite seu peso em kg: "))
-altura = float(input("Digite sua altura em metros: "))
+peso = float(input("Digite seu peso em kg: ").replace(',','.'))
+altura = float(input("Digite sua altura em metros: ").replace(',','.'))
 
 print(f"Seu IMC é: {calc_imc(altura,peso)}\nSua classigficação é \"{classifica_imc(calc_imc(altura,peso))}\"")

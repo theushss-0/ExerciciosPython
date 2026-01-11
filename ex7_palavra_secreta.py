@@ -1,15 +1,17 @@
 import os
-
-palavra_secreta = "Segredo"
+print("ATÉNÇÃO: \"Isso é para o ADM da vez!!!\"\n")
+genero = input("Qual o genero dessa deseja?\n=>")
+palavra_secreta = input("Qual é a palavra Secreta dessa rodada?\n=>")
 numLetras = len(palavra_secreta)
 numTentativas = 0
 aux_palavra = str("*," * numLetras)[:-1]
-
+os.system('clear')
 
 desistir = False
 aux = aux_palavra.split(",")
 
 while not desistir:
+    print(f"Genero: {genero}")
     print("=======================================")
     if aux_palavra.strip() == palavra_secreta:
         break
@@ -24,6 +26,8 @@ while not desistir:
     
     if (letra in palavra_secreta):
         #print("\ntamanho palavra_secreta: ", len(palavra_secreta))
+
+
 
         for i in range(numLetras):
             if palavra_secreta[i] == letra:
