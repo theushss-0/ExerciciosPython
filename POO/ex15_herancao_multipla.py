@@ -30,8 +30,8 @@ class D(B,C):
 
 
     def falar(self):
-        print(D.mro()[1])
-        super(D.mro()[1], self).falar()
+        print(D)
+        super(D, self).falar()
     #def falar(self):
     #    print("Estou em D")
 

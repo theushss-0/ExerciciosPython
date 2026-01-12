@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractFoo:
+class AbstractFoo(ABC):
 
-
+    
     def __init__(self, nome):
         self._nome = None
         self.nome = nome

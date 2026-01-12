@@ -35,11 +35,16 @@ class Endereco:
     # OU AO CHAMAR O DEL NO OBJETO
     def __del__(self):
         print("APAGANDO, ", self.rua, self.numero)
-
-
+'''
+class Objetos:
+    def __init__(self, nome,idade):
+        self.rua =  nome
+        self.numero= idade
+'''
 
 cliente = Cliente('José')
-
+#objeto = Objetos("Cadeira",21)
+#cliente.inserir_enderecos(objeto)
 cliente.inserir_enderecos(Endereco('Rua A', 1123))
 cliente.inserir_enderecos(Endereco('Rua B', 11))
 endereco = Endereco('RUA N', 1) #Este endereço existe até que o programa finalize ou o objeto seja deletado (del endereco)

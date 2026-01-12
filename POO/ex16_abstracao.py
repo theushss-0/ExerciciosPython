@@ -16,7 +16,7 @@
 
 class Log:
 
-    def _log(self):
+    def _log(self,msg):
         raise NotImplementedError("Implemente a Classe")
     
     def log_error(self, msg):

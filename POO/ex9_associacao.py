@@ -12,13 +12,13 @@ class Escritor:
         self._ferramenta = ferramenta
 
     
+    def escrever(self):
+        return 'Estrou escrevendo!'
 
 class Ferramenta:
     def __init__(self, nome_ferramenta):
         self.nome_ferramenta = nome_ferramenta
     
-    def escrever(self):
-        return 'Estrou escrevendo!'
     
 
 
@@ -31,5 +31,5 @@ Quando um Objeto possui um atributo que receber um outro objeto e a partir deste
 
 escritor.ferramenta = ferramenta  ## nesse momento está acontecendo uma associação
 
-print(escritor.ferramenta.escrever()) ## utilizando a partir do escritor um médodo (funcionalidade) de uma ferramenta(no caso a caneta)
+print(escritor.escrever()) ## utilizando a partir do escritor um médodo (funcionalidade) de uma ferramenta(no caso a caneta)
 

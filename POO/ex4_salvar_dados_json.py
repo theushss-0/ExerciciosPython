@@ -1,6 +1,9 @@
+import json
+
+CAMINHO_ARQUIVO = './arquivos/dd_pessoa.json'
+
 class Pessoa:
 
-    CAMINHO_ARQUIVO = './arquivos/dd_pessoa.json'
 
     def __init__(self, nome, sobrenome, idade, peso, altura):
         self.nome = nome
@@ -11,11 +14,10 @@ class Pessoa:
 
     
     def SalvarJson(self, listaDados=[]):
-        import json
 
         listaDados.append(self.__dict__)
 
-        with open(Pessoa.CAMINHO_ARQUIVO, 'w', encoding='utf8') as arquivo:
+        with open(CAMINHO_ARQUIVO, 'w', encoding='utf8') as arquivo:
             json.dump(
                 listaDados,
                 arquivo,
@@ -24,7 +26,7 @@ class Pessoa:
             )
 
     def CarregarDadosJson():
-        import json
+        
         try:
             with open(Pessoa.CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
                 return list(json.load(arquivo))
