@@ -51,8 +51,7 @@ def verificar_cpf(cpf):
 
 # Formata o CPF
 def formatar_cpf(cpf):
-    cpf_formatada = re.sub(r'[^0-9]','', cpf)
-    return cpf_formatada
+    return re.sub(r'[^0-9]','', cpf)
 
 # Valida formatação
 def valida_formatacao(cpf):

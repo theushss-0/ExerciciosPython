@@ -16,7 +16,7 @@ if (" " in nome):
 else:
     print("Seu nome não contém espaços!")
 
-print(f"Seu nome tem {len(nome)}")
+print(f"Seu nome tem {len(nome)} letras")
 
 print(f"A primeria letra do seu nome é {nome[0]}")
 print(f"A ultima letra do seu nome é {nome[-1]}")

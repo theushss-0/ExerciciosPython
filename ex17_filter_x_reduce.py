@@ -39,7 +39,7 @@ produtos_maior_que_dez = filter(
 preco_total_list = round(reduce(
     lambda ac,prod: prod['preco'] + ac,
     #soma_valores,
-    tab_precos,
+    deepcopy(tab_precos),
     0
 ),2)
 
